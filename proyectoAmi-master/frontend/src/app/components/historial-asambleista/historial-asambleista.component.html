@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Leer Ley</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Basic Page Needs
+    ================================================== -->      
+    
+   <!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/css/main.css">
+<!--===============================================================================================-->
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+   
+</head>
+<body>
+
+  <div>
+  
+    <!-- Main Navigation 
+      ================================================== -->
+      <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img src="../../../assets/img/logo1.jpg" alt="" width="100px" height="100%"></a>
+            </div>
+  
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="" class="scroll" routerLink="/admin/inicio">Inicio</a></li>
+                <li><a href="" class="scroll" routerLink="/admin/leyes">Leyes</a></li>
+                <li class="nav-item dropdown nav">
+                  <a class="nav-link active dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                  Opciones <b class="caret"></b></a>
+                  <div class="dropdown-menu">
+                    <a class="scroll active dropdown-item" routerLink="/admin/historial-asambleista">Historial</a>
+                    <a class="dropdown-item" href="#">Modificar ley</a>
+                    <a class="dropdown-item" href="#">Votar</a>                    
+                    <a class="dropdown-item" href="#">Archivar Leyes</a>
+                  </div>
+                </li>              
+
+                <li><a href="" class="scroll" routerLink="/admin/acercaDe">Acerca De</a></li>
+                <li><a href="" class="scroll" routerLink="/contactanos">Contactanos</a></li>              
+  
+              </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- END nav -->
+    <!-- <img src="../../../assets/img/barra.png" alt="" width="100%"> -->
+  </div>
+
+      
+<!-- Page Header
+    ================================================== -->
+    <div id="tf-header">    
+        <div class="container">
+            <h1>Versiones de Artículos / Proyecto de Leyes</h1>
+        </div>
+    </div>     
+ 
+  <br><br><br>  
+
+
+<!-- Formulario Header
+    ================================================== -->
+<div>
+<form>
+      <fieldset disabled>
+    <div class="form-row"> 
+      <div class="form-group col-md-6">
+        <label for="inputCodDecre">Nuevo código de decreto</label>
+        <input type="text" class="form-control" id="inputCodDecre" placeholder="825">
+      </div>
+      <div class="form-group col-md-6">        
+            <label for="inputNombProy">Nombre Ley/Proyecto</label>
+            <input type="text" class="form-control" id="inputNombProy" placeholder="Proyecto de Ley Reformatoria a la minería">                  
+      </div>     
+     
+    </div>
+
+    <div class="form-row">
+     
+        <div class="form-group col-md-4">          
+          <label for="inputSFechaPubli">Fecha de Publicacion</label>
+          <div class="col-10">
+            <input class="form-control" type="date" value="2020-01-06" id="example-date-input">
+          </div>
+        </div>
+        <div class="form-group col-md-4">        
+            <label for="inputEstadoTramite">Estado del Tramite</label>
+            <select id="inputEstadoTramite" class="form-control">
+              <option selected>Ley Aprobada</option>
+              <option>Ley Aprobada</option>
+              <option>Ley Archivada</option>
+              <option>Ley en Debate</option>
+            </select>  
+        </div>
+        <div class="form-group col-md-4">        
+              <label for="inputNombrePerson">Nombre de la persona que propone Ley/Proyecto</label>
+              <input type="text" class="form-control" id="inputNombrePerson" placeholder="Olga Tohabanda">            
+        </div>
+       
+      </div>
+    </fieldset>  
+    
+<div class="form-row">
+    <div class="form-group col-md-12">
+     <br><br><br><label for="inputArtLeyes">Artículos para leyes/Proyecto de leyes</label>       
+    </div>
+</div>
+
+<div class="view-content">
+  <div class="form-row">
+    <div class="form-group col-md-1">
+    </div>
+  </div>
+<div class="form-row">
+    <div class="form-group col-md-10">
+<table id="dtBasicExample" class="table table-striped table-responsive table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm">Artículo
+  
+        </th>
+        <th class="th-sm">Detalle del artículo
+  
+        </th>
+        <th class="th-sm">Explicación del artículo
+  
+        </th>
+        <th class="th-sm">Fecha de modificación  
+        </th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Art. 1</td> 
+           
+        <td>Norma la organización, planificación, fomento, regulación, modernización y control del Transporte Terrestre, Tránsito y Seguridad Vial.</td>
+      
+        <td>Norma la organización, planificación, fomento, regulación, modernización y control del Transporte Terrestre, Tránsito y Seguridad Vial.</td>
+
+        <td>06/01/2020</td>        
+      </tr>    
+      <div class="form-row">
+        <fieldset disabled>
+        <div class="form-group col-md-12">
+            <br><br><label for="inputNombre">Nombre de la persona que modifica Ley/Proyecto</label>
+            <input type="text" class="form-control" id="inputCity" placeholder="Olga Tohabanda">      
+        </div>
+      </fieldset>
+    </div>
+    </tbody>
+ 
+  </table>
+
+
+
+<div class="view-content">
+  <table id="dtBasicExample" class="table table-striped table-responsive table-bordered table-sm" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Artículo
+    
+          </th>
+          <th class="th-sm">Detalle del artículo
+    
+          </th>
+          <th class="th-sm">Explicación del artículo
+    
+          </th>
+          <th class="th-sm">Fecha de modificación  
+          </th>        
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Art. 1</td> 
+             
+          <td>Norma la organización, planificación, fomento, regulación, modernización y control del Transporte Terrestre, Tránsito y Seguridad Vial.</td>
+        
+          <td>Norma la organización, planificación, fomento, regulación, modernización y control del Transporte Terrestre, Tránsito y Seguridad Vial.</td>
+  
+          <td>06/01/2020</td>        
+        </tr>    
+        <div class="form-row">
+          <fieldset disabled>
+          <div class="form-group col-md-12">
+              <br><br><label for="inputNombre">Nombre de la persona que modifica Ley/Proyecto</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="Olga Tohabanda">      
+          </div>
+        </fieldset>
+      </div>
+      </tbody>
+       </table>
+  </div>  
+</div>
+</div>
+
+    <div class="form-row">
+      <div class="form-group col-md-1">
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-5"></div>
+  
+  <div class="form-group col-md-4">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">&raquo;</a>
+        </li>
+      </ul>
+    </nav>
+      </div>
+  
+    <div class="col-md-3">
+  
+    </div>
+  </div>
+</form>
+</div>
+
+  <!--===============================================================================================-->	
+	<script src="../../../../assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="../../../../assets/login/vendor/bootstrap/js/popper.js"></script>
+    <script src="../../../../assets/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="../../../../assets/login/vendor/select2/select2.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="../../../../assets/login/js/main.js"></script>
+
+  
+
+</body>
+</html>

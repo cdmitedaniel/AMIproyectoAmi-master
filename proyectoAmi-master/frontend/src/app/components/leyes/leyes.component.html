@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Leer Ley</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="../../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/responsive.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../../../assets/login/css/main.css">
+<!--===============================================================================================-->
+    
+  </head>
+  <body>
+
+<div>
+  
+  <!-- Main Navigation 
+    ================================================== -->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#"><img src="../../../assets/img/logo.jpg" alt="" width="100px" height="100%"></a> -->
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <!--  <ul class="nav navbar-nav navbar-right">
+              <li><a href="" class="scroll" routerLink="/admin/inicio">Inicio</a></li>
+              <li><a href="" class="scroll active" routerLink="/admin/leyes">Leyes</a></li>
+              <li><a href="" class="scroll" routerLink="/admin/acercaDe">Acerca De</a></li>
+              <li><a href="" class="scroll" routerLink="/contactanos">Contactanos</a></li> 
+              <li><a href="" class="scroll" routerLink="/admin/login">Iniciar Sesion</a></li> 
+
+            </ul> -->
+          </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+  </nav>
+  <!-- END nav -->
+  <!-- <img src="../../../assets/img/barra.png" alt="" width="100%"> -->
+</div>
+
+<!-- Page Header
+    ================================================== -->    
+    <div id="tf-header">
+      <div class="container">
+          <h1>Leyes / Proyecto de Leyes</h1>
+      </div>
+  </div>
+  <br><br><br>   
+
+<!-- Formulario Header
+    ================================================== -->
+    <form>
+      <div class="form-group col-md-6">
+    <label for="inputCity">Ley/Proyecto </label>
+    <input type="text" class="form-control" id="inputCity" placeholder="Nombre Ley/Proyecto">
+  </div>
+  <div class="form-group col-md-2">        
+        <label for="inputZip">Estado del Tramite</label>
+        <select id="inputState" class="form-control" [(ngModel)]="selectesEstatusID" (change)="setSelectedStatus($event)">
+          <option selected>Seleccionar...</option>
+          <option [value]="Todos">Todos</option>
+          <option [value]="Enviado">Enviado</option>
+          <option [value]="Aprobado">Aprobado</option>
+          <option [value]="EnProceso">EnProceso</option>
+          <option [value]="Rechazado">Rechazado</option>
+        </select>          
+  </div>
+  <div class="form-group col-md-2">        
+        <label for="inputZip">Período Legislativo</label>
+        <select id="inputState" class="form-control">
+          <option selected>Seleccionar...</option>
+          <option>Todos</option>
+          <option>2009-2013</option>
+          <option>2013-2017</option>
+          <option>2017-2021</option>             
+        </select>
+  </div>
+  <div class="form-group col-md-2">
+    <br>
+    <button type="button" class="btn btn-primary"  (click)="buscar()" style="margin: 5px">Buscar</button>
+   
+  </div>
+  
+<div class="form-row">
+<div class="form-group col-md-12">
+ <br><br><br>
+ <label for="inputSeleccionProy">Seleccione la Ley/Proyecto y acceda a la información </label>       
+</div>
+</div>
+
+<div class=" jumbotron-fluid">
+<div class="container">
+<div class="form-row">
+  <div class="form-group col-md-3">
+<br><br><br>
+<div class="thumbnail">
+    <app-ley-item
+      *ngFor="let ley of leyes"
+      [ley] = "ley"
+    >
+
+    </app-ley-item>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</form>
+
+<div class="form-group">
+<div class="col-md-5">
+
+</div>
+
+
+<div class="col-md-3">
+
+</div>
+</div>
+
+ <!--===============================================================================================-->	
+ <script src="../../../../assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+ <!--===============================================================================================-->
+   <script src="../../../../assets/login/vendor/bootstrap/js/popper.js"></script>
+   <script src="../../../../assets/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+ <!--===============================================================================================-->
+   <script src="../../../../assets/login/vendor/select2/select2.min.js"></script>
+ <!--===============================================================================================-->
+   <script src="../../../../assets/login/js/main.js"></script>
+
+</body>
+</html>
